@@ -1,0 +1,27 @@
+# Configuração do Glassfish (eu estou usando o 5.0)
+# -------------------------
+
+# Ir para pasta bin do glassfish:
+
+cd ..\glassfish\bin>
+
+# Executar o comando:
+
+asadmin
+
+# Dentro dp asadmin, executar o comando:
+
+asadmin> set server.ejb-container.property.disable-nonportable-jndi-names="true"
+
+# Deverá aparecer a mensagem abaixo:
+
+server.ejb-container.property.disable-nonportable-jndi-names=true
+Command set executed successfully.
+
+# Depois, sair do asadmin:
+asadmin> exit
+
+# Aparecerá a mensagem abaixo:
+Command multimode executed successfully.
+
+# The End!!!!

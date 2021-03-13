@@ -1,0 +1,18 @@
+// Exemplo no JSP
+
+final String APP_NAME = "foursys-system-ear-7.1";
+final String MODULE_NAME = "br.com.foursys-foursys-system-business-7.1";
+final String BEAN_NAME = "RegiaoEJB";
+InitialContext ctx = JNDIUtils.createInitialContext();
+RegiaoEJBRemote regiaoEJB = JNDIUtils.lookup(ctx, APP_NAME, MODULE_NAME, BEAN_NAME);
+
+if(regiaoEJB != null) {
+  out.write("Lista de Regiões<br>\n");
+  out.write("----------------<br>\n");
+  List<Regiao> regioes = regiaoEJB.getAll();
+  for(Regiao r : regioes) {
+    out.write(r.toString() + "<br>\n");
+  }
+} else {
+  out.write("regiaoEJB IS NULL<br>\n");
+}
